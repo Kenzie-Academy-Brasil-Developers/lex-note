@@ -1,10 +1,11 @@
 import { NoteCard } from "./NoteCard";
+import styles from "./style.module.css";
 
 export const NoteList = ({ noteList, removeNoteFromNoteList }) => {
    return (
       <>
          {noteList.length > 0 ? (
-            <ul>
+            <ul className={styles.noteList}>
                {/* para cada objeto na minha lista, escreva um NoteCard */}
                {noteList.map((note) => {
                   return (
@@ -17,7 +18,7 @@ export const NoteList = ({ noteList, removeNoteFromNoteList }) => {
                })}
             </ul>
          ) : (
-            <p>Cadastre sua primeira nota!</p>
+            <p className="paragraph">Cadastre sua primeira nota!</p>
          )}
       </>
    );

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import styles from "./style.module.css";
 
 export const NoteCreateForm = ({ addNoteToNoteList }) => {
     const [title, setTitle] = useState("");
@@ -11,12 +12,12 @@ export const NoteCreateForm = ({ addNoteToNoteList }) => {
     }
 
     return(
-        <div>
-            <h2>Cadastre a sua nota</h2>
-            <form onSubmit={submit}>
-                <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
-                <textarea value={message} onChange={(event) => setMessage(event.target.value)}></textarea>
-                <button type="submit">Criar nota</button>
+        <div className={styles.formBox}> 
+            <h2 className="title two">Cadastre a sua nota</h2>
+            <form onSubmit={submit} className="form">
+                <input placeholder="Título da nota" type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
+                <textarea placeholder="Mensagem" value={message} onChange={(event) => setMessage(event.target.value)}></textarea>
+                <button className="btn lg solid1" type="submit">Criar nota</button>
             </form>
         </div>
     )

@@ -1,9 +1,11 @@
+import styles from "./style.module.css";
+
 export const NoteCard = ({note, removeNoteFromNoteList}) => {
     return(
-        <li>
-            <h3>{note.title}</h3>
-            <p>{note.message}</p>
-            <button onClick={() => removeNoteFromNoteList(note.id)}>Excluir</button>
+        <li className={styles.noteCard}>
+            <h3 className="title two">{note.title}</h3>
+            <p className="paragraph">{note.message}</p>
+            <button className="btn sm solid1" onClick={() => removeNoteFromNoteList(note.id)}>Excluir</button>
         </li>
     )
 }

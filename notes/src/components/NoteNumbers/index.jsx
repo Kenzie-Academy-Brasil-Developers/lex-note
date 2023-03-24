@@ -1,10 +1,12 @@
+import styles from "./style.module.css";
+
 export const NoteNumbers = ({notesNumber, notesLength}) => {
    return (
-      <div>
-         <span>
+      <div className={styles.numberBox}>
+         <span className="paragraph">
             Notas: <strong>{notesNumber}</strong>
          </span>
-         <span>
+         <span className="paragraph">
             Caracteres: <strong>{notesLength}</strong>
          </span>
       </div>
